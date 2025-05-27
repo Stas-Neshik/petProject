@@ -1,12 +1,13 @@
 import express from 'express';
+import { Request, Response } from 'express';
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = Number(process.env.PORT) || 3000;
 
 app.use(express.json());
 
 
-app.get('/', (_req, res) => {
+app.get('/', (_req: Request, res: Response) => {
   res.send('Привет! Сервер работает 🚀323');
 });
 
